@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 ruby "1.9.2"
 
+gem "heroku"
+
 gem 'rails', '3.2.3'
 gem 'mysql2'
 gem 'jquery-rails'
@@ -12,6 +14,12 @@ gem 'bootstrap-will_paginate', '0.0.6'			#for boostrap pagination style
 gem 'prawn'    									#for pdf
 gem 'awesome_nested_fields'						#for course nested fields
 gem 'bootstrap-sass'							#for bootstrap framework
+
+
+group :production do
+  gem 'thin'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
