@@ -1,0 +1,123 @@
+ 
+          <div class="MainBodyWrapper">
+
+            <div class="container">
+              
+              <%= render "shared/error_messages", :target => @form %>
+
+              <div class="row">
+
+
+                <div class="span3">                  
+                    <%= link_to 'View All Transfer Docs', forms_path, :class => "btn btn-large" %>                 
+                </div>       
+                <div class="span8">    
+                  <div class="font-padding text-bold border">Course Transfer Form</div>
+  
+                    
+                      <%= form_for @form, :html => { :id => "myForm" } do |f| %>
+
+
+                      <div class="form-inline">
+                        <div class="control-group">
+                          <div class="controls">
+
+                         <%= f.text_field :first_name, :class => "input-mid", :placeholder => "First Name" %>
+                         <%= f.text_field :last_name, :placeholder => "Last Name" %>
+                           <%= f.text_field :initial, :class => "input-small", :placeholder => "Initial" %>
+                          </div>
+                        </div>
+                    </div>
+                        
+                    <div class="form-inline">
+                        <div class="control-group">
+                          <div class="controls">
+                        <%= f.text_field :student_id, :class => "input-mid", :placeholder => "Student ID#" %> 
+
+                        <%= f.text_field :department_name, :class => "input-large",data: {autocomplete_source: departments_path}, :placeholder => "Department Ex. Biology" %> 
+                              </div>
+                        </div>
+                    </div>
+                    
+
+                       <div class="form-inline">
+                        <div class="control-group">
+                          <div class="controls">
+                       
+                        <%= f.text_field :school_name, :class => "input-large", data: {autocomplete_source: School.order(:name).map(&:name)}, :placeholder => "School Ex. College of Arts and Science" %> 
+                              </div>
+                        </div>
+                    </div>
+                      
+                      <div class="form-inline">
+                        <div class="control-group">
+                          <div class="controls">
+                        <%= f.text_field :source_of_credit, :class => "input-large", :placeholder => "School/Source of Credit" %> 
+
+                        <%= f.text_field :location, :class => "input-large", :placeholder => "Location: City/Country" %> 
+                              </div>
+                        </div>
+                    </div>
+
+
+            <div class="control-group">
+              <label class="control-label" for="Title" style="padding-left: 7px;">Date course was taken</label>
+                  <div class="controls">
+                    <%= f.text_field :date_course_taken, :class => "input-larger", :placeholder => "Ex. Summer 08 or Fall 09 - Summer 10" %> 
+                </div>
+            </div>
+
+
+                      
+
+<div class="font-padding text-bold border">
+  <div class="course-header">Course Info | Original Institution</div>
+  <div>Course Info | Howard University Equivalent</div>
+</div>
+                      <div class="items">
+                          <%= f.nested_fields_for :courses do |c| %>                             
+                             <%= render 'course_fields', f: c %>                              
+                          <% end %>
+                      </div>                        
+                          <a href="#" class="add">Add more courses</a>
+
+                        
+                    <%#<div class="total-margin">
+                        <div class="tCourse-margin">Total Hours: <%= f.text_field :tCourse_hrs_total, :class => "input-small", :disabled => true %> 
+                        <%#  </div> 
+                        <div>Total Hours: <%= f.text_field :hCourse_hrs_total, :class => "input-small", :disabled => true %> 
+                       <%# </div>
+                      </div> %>
+
+                      <div class="border" style=" margin-top: 15px;"></div>
+
+                       <%= f.text_area :notes, :class => "input-larger", :rows => 5, :placeholder => "Include additional comments or notes (Optional)" %>     
+
+                          <div class="form-inline" style=" margin-top: 12px;">
+                        <div class="control-group">
+                          <div class="controls">
+
+                         <%= f.text_field :dept_evaluator, :placeholder => "Department Evaluator" %>
+                         <%= f.text_field :dept_chair, :placeholder => "Department Chair" %>
+                          </div>
+                        </div>
+                    </div>
+                        
+
+
+                      <div class="actions">
+                          <%= f.submit "Save", :class => "btn btn-save-resize" %>
+                          <%= link_to 'Clear', new_form_path, :class => "btn", :style => "margin-left: 3px;" %> 
+                        </div>
+
+
+                      <% end %>             
+                    
+                </div>       
+              </div>
+            </div>      
+
+          </div>
+
+
+

@@ -1,0 +1,2 @@
+module HcoursesHelper
+end

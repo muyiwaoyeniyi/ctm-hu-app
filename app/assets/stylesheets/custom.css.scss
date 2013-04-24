@@ -1,0 +1,391 @@
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Muli);
+
+.headerWrapper, .MainBodyWrapper, .footerWrapper
+{
+  font-family: 'Muli', sans-serif; /*add more selection*/
+}
+
+.navbar-inner
+{
+	background-color: white;
+	background-image: none;
+	box-shadow: none;
+	border-bottom: 1px dotted gray;
+}
+
+.navbar .container 
+{
+	width: 960px;
+}
+
+.brand-align
+{
+	text-align: center;
+	font-size: 25px;
+	margin-top: 6px;
+	margin-bottom: 10px;
+	color: #483C32;
+}
+
+a.brand-ctm
+{
+	color: #B22222;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 35px;
+
+   &:hover {
+    color: #E62020;
+    text-decoration: none;
+  }
+
+}
+
+/*styling for all content within the header and footer - use a browser's css and html editor to identify their uses*/
+.MainBodyWrapper 
+{
+    min-height: 370px;
+
+    .row{
+        width: 960px;
+        margin-top: 35px;
+        margin-left: -10px;
+    }
+
+    .span3 {
+        margin-left: 0px;
+    }
+
+    .span8{
+        width: 700px;
+        margin-left: 38px;
+    }
+
+    .btn{
+        border-radius: 0px;
+    }
+
+    .font-padding{
+        padding-left: 7px;
+        padding-bottom: 10px;
+    }
+
+    .left-column{
+        width: 300px;
+        padding-left: 7px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .link_truncated {
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;        
+    }
+
+    .text-bold {
+        font-weight: bold;
+    }
+
+    .middle-column{
+        text-align: center;
+        width: 220px;
+    }
+
+    .right-column{
+        text-align: center;
+        width: 180px;
+    }
+
+    tr{
+        border: 1px dotted gray;
+        border-left: none;
+        border-right: none;
+    }
+
+    tr.hover{
+      &:hover{
+        background-color: whitesmoke;
+      }       
+    }
+
+    .border{
+        border-bottom: 1px dotted gray;
+        margin-bottom: 20px;
+    }
+
+    .control-group{
+        margin-bottom: 15px;
+    }
+
+    .input-small{
+        width: 35px;
+        text-align: center;
+    }
+
+    .input-mid{
+        width: 130px;
+    }
+
+    .input-course-mid{
+        width: 80px;
+    }
+
+    .input-large{
+        width: 260px;
+    }
+
+    .input-course-large{
+        width: 180px;
+    }
+
+    .input-larger{
+        width: 300px;
+    }
+
+    .input-course-padding{
+        margin-left: 19px;
+    }
+
+    .course-header{
+        float: left;
+        margin-right: 150px;
+    }
+
+    .btn-save-resize{
+        width: 100px;
+    }
+
+    .actions{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    a.remove{
+      color: #000;
+      &:visited {
+        color: #666;
+      }
+    }
+
+    a.add{
+        margin-bottom: 15px;
+    }
+
+    input[type='text'].required, textarea.required {
+        background-image: url(../assets/required-input.png);
+        background-repeat: no-repeat;
+        background-position: right 5px;
+    }
+
+    .total-margin{
+        margin-left: 213px;
+        .tCourse-margin{
+            margin-right: 235px;
+            float: left;
+        }
+    }
+
+    /*for placeholder font*/
+    ::-webkit-input-placeholder {
+        font-family: 'Muli'
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+        font-family: 'Muli'
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+        font-family: 'Muli'
+    }
+
+    :-ms-input-placeholder {  
+        font-family: 'Muli'
+    }
+    /*end for placeholder font*/
+
+    /*styling when there are no forms*/
+    .no-forms{
+        font-size: 17px; 
+        margin-top: 1px;
+    }
+    /*end styling when there are no forms*/
+
+    /*styling for errors*/
+    #error_explanation {
+
+        width: 924px;
+        border: 1px solid #EED3D7;
+        padding: 7px;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+        background-color: #F2DEDE;
+        color: #B94A48;
+        
+        h2{
+            text-align: left;
+            font-weight: bold;
+            padding: 0px 0px 0px 15px;
+            font-size: 12px;
+            margin: -7px;
+            margin-bottom: 0px;
+            background-color: #F2DEDE;
+            color: #B94A48;
+        }
+
+        ul{
+            font-size: 12px;
+        }
+    }
+
+    .field_with_errors{
+        display: inline-block
+    }
+
+    .field_with_errors input, .field_with_errors textarea, .field_with_errors select {
+        border: 1px solid #F88379 !important;
+    }
+    /*end styling for errors*/
+
+    .pagination{
+        float: right;
+    }
+
+     .show-border{
+        margin-bottom: 11px;
+        border-bottom: 1px dotted gray;
+    }
+
+    .show-border2{
+        margin-bottom: 5px;
+        border-bottom: 1px dotted gray;
+        padding-bottom: 5px;
+    }
+
+    .show-border3{
+        margin-bottom: 12px;
+        margin-top: 4px;
+        border-bottom: 1px dotted gray;
+    }
+
+     .show-border4{
+        margin-bottom: 12px;
+        margin-top: 40px;
+        border-bottom: 1px dotted gray;
+    }
+
+    .show-left-column{
+        width: 78px;
+        text-align: right;
+    }
+
+    .show-middle1-column{
+        width: 169px;
+        margin-right: 20px;
+        margin-left: 5px;
+        color: black;
+    }
+
+    .show-middle2-column{
+        width: 150px;
+        text-align: right;
+    }
+
+    .show-right-column{
+        margin-left: 5px;
+        width: 265px;
+        color: black;
+    }
+
+    .show-course-header{
+        float: left;
+        margin-right: 50px;
+        min-width: 325px;
+    }
+
+    .show-left-column2{
+        width: 90px;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    .show-middle1-column2{
+        width: 178px;
+        margin-right: 15px;
+    }
+
+    .show-middle2-column2{
+        width: 33px;
+        text-align: center;
+        margin-right: 25px;
+    }
+
+    .show-total-align{
+        font-weight: bold; 
+        text-align: right;
+    }
+}
+/*end styling for all content within the header and footer*/
+
+
+.footerWrapper 
+{
+    color: gray;
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+    .container{
+        width: 960px;
+    }
+}
+
+/*styling for all autosuggestions*/
+ ul.ui-autocomplete
+ {      
+      font-family: 'Muli', sans-serif;
+      position: absolute;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: solid 1px gray;
+      cursor: pointer;
+      li {
+        background-color: #FFF;
+        border-top: solid 1px #DDD;
+        margin: 0;
+        padding: 0;
+        a {
+          color: #000;
+          display: block;
+          padding: 3px;
+          text-decoration: none;
+        }
+        a.ui-state-hover, a.ui-state-active {
+          background-color: #FFFCB2;
+        }
+      }
+      .ui-menu-item:hover{    
+        background-color: whitesmoke;    
+      }
+}
+
+.ui-helper-hidden-accessible
+{
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+}
+/*end styling for all autosuggestions*/
+
+
+
+
+

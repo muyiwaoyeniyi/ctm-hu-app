@@ -1,0 +1,51 @@
+
+  
+          <div class="MainBodyWrapper">
+
+            <div class="container">
+              <div class="row">
+                <div class="span3">                  
+                    <%= link_to 'Add New Transfer Doc', new_form_path, :class => "btn btn-large" %>                 
+                </div>       
+                <div class="span8">
+
+                  <% if @forms.present? %>
+
+                         <div class="font-padding text-bold">Course Transfer Form</div>
+                  <table>
+                        <tr class='text-bold'>
+                          <td class="left-column">Name</td>
+                          <td class="middle-column">Modified</td>                      
+                          <td class="right-column">Actions</td>                          
+                        </tr>
+                    <% @forms.each do |form| %>
+                        <tr class="hover">
+                          <td class="left-column link_truncated"><%= link_to form.full_name, form %></td> 
+                           <%# if form.updated_at == form.created_at %>
+                              <%#<td class="middle-column">--</td> %>
+                          <%# else %> 
+                              <td class="middle-column"><%= form.updated_at.strftime("%m/%d/%Y %H:%M %p") %></td>
+                          <%# end %> <%# can be used later for differentiating b/w created and modified dates%>
+                          <td class="right-column"><%= link_to 'Edit', edit_form_path(form) %> |
+                          <%= link_to 'Delete', form, confirm: 'Are you sure?', method: :delete %></td>
+                        </tr>
+                    <% end %>
+                </table> 
+
+                    <%= will_paginate @forms %>
+
+                <% else %>
+
+                    <div class="no-forms">Sadly, it is lonely out here......Please add a transfer form!</div>
+                    <img src="assets/Sadface.png" alt="Sad Face" />          
+
+                <% end %>  <%# @forms %>       
+                    
+                </div>       
+              </div>
+            </div>      
+
+          </div>
+
+
+

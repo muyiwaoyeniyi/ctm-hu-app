@@ -1,0 +1,122 @@
+
+
+ 
+          <div class="MainBodyWrapper">
+            <div class="container">      
+
+              <%= render 'shared/message' %>
+              <div class="row">
+                  <%# id="notice"><%= notice %><%#=%>                  
+                <div class="span3">                  
+                    <%= link_to 'View All Transfer Docs', forms_path, :class => "btn btn-large" %>                 
+                </div>       
+                <div class="span8">    
+                      
+                    <div class="font-padding text-bold show-border">Transfer Student Information | <%= @form.school.name %></div>
+
+                     <table style="border-collapse: separate; margin-bottom: 40px;">
+                        <tr>
+                          <td class="show-left-column">Full Name:</td> 
+                          <td class="show-middle1-column link_truncated"><%= @form.full_name %> <%= @form.initial %></td>
+                          <td class="show-middle2-column">School/Source of Credit:</td>
+                          <td class="show-right-column link_truncated"><%= @form.source_of_credit %></td>
+                        </tr>
+                        <tr>
+                          <td class="show-left-column">Student ID#:</td>
+                          <td class="show-middle1-column link_truncated"><%= @form.student_id %></td>
+                          <td class="show-middle2-column">Location (City/Country):</td>
+                          <td class="show-right-column link_truncated"><%= @form.location %></td>
+                        </tr>
+                        <tr>
+                          <td class="show-left-column">Department:  </td> 
+                          <td class="show-middle1-column link_truncated"><%= @form.department.name %></td>
+                          <td class="show-middle2-column">Date course was taken:</td>
+                          <td class="show-right-column link_truncated"><%= @form.date_course_taken %></td>
+                        </tr>
+                        <tr>
+                          <td class="show-left-column">School:  </td> 
+                          <td class="show-middle1-column link_truncated"><%= @form.school.name %></td>
+                        </tr>
+                    </table> 
+
+
+                    <div class="font-padding text-bold show-border2">
+                      <div class="show-course-header link_truncated"><%= @form.source_of_credit   %></div>
+                        <div>Howard University Equivalent</div>
+                      </div>
+
+                        <table style="border-collapse: separate; font-size: 12px;">
+                        <tr>
+                          <td class="show-left-column2 link_truncated">Course #</td> 
+                          <td class="show-middle1-column2 link_truncated">Course name</td>
+                          <td class="show-middle2-column2 link_truncated">Hours</td>
+                          <td class="show-left-column2  link_truncated" style="color: #B22222;">Course #</td>
+                          <td class="show-middle1-column2 link_truncated" style="color: #B22222;">Course name</td>
+                          <td class="show-middle2-column2 link_truncated" style="margin-right: 0px; color: #B22222;">Hours</td>
+                        </tr>
+                    </table> 
+
+                      <div class="show-border3"></div>
+
+                      <% @form.courses.each do |p| %>
+                     <table style="border-collapse: separate; font-size: 12px; margin-bottom: 12px;">
+                        <tr>
+                          <td class="show-left-column2 link_truncated"><%= p.tCourse_num %></td> 
+                          <td class="show-middle1-column2 link_truncated"><%= p.tCourse %></td>
+                          <td class="show-middle2-column2 link_truncated"><%= p.tCourse_hrs %></td>
+                          <td class="show-left-column2  link_truncated" style="color: #B22222;"><%= p.hcourse.number %></td>
+                          <td class="show-middle1-column2 link_truncated" style="color: #B22222;"><%= p.hcourse.name %></td>
+                          <td class="show-middle2-column2 link_truncated" style="margin-right: 0px; color: #B22222;"><%= p.hCourse_hrs %></td>
+                        </tr>
+                    </table> 
+                    <% end %>
+
+                    <table style="border-collapse: separate; font-size: 12px; margin-bottom: 12px;">
+                        <tr>
+                          <td class="show-left-column2 link_truncated"></td> 
+                          <td class="show-middle1-column2 link_truncated show-total-align">Total Hours:</td>
+                          <td class="show-middle2-column2 link_truncated"><%= @form.tCourse_hrs_total %></td>
+                          <td class="show-left-column2  link_truncated"></td>
+                          <td class="show-middle1-column2 link_truncated show-total-align">Total Hours:</td>
+                          <td class="show-middle2-column2 link_truncated" style="margin-right: 0px; color: #B22222;"><%= @form.hCourse_hrs_total %></td>
+                        </tr>
+                    </table> 
+
+                    <div class="show-border4"></div>
+
+                    <% if !(@form.notes.empty?) %>
+                      <div class="font-padding text-bold">Additional Comments</div>
+                      <div class="font-padding" style=" margin-bottom: 15px;"><%= @form.notes %></div>
+                      <div class="show-border3"></div>
+                    <% end %>
+
+                    <div class="font-padding">Created at: <%= @form.created_at %></div>
+                    <div class="font-padding" style="margin-top: -10px;">Last Modified at: <%= @form.updated_at %></div>
+
+                    <div class="show-border3"></div>
+                    
+                    <div class="font-padding">Department Evaluator: <%= @form.dept_evaluator %></div>
+                    <div class="font-padding" style="margin-top: -10px;">Department Chair: 
+                    <% if @form.dept_chair.empty? %>
+                        None Assigned Yet
+                    <% else %>
+                      <%= @form.dept_chair %>
+                    <% end %>
+                    </div>                    
+                          
+                 
+                 <p class="font-padding" style="margin-top: 25px;"><%= link_to "View PDF", form_path(@form, format: "pdf"), :class => "btn btn-save-resize" %> <%= link_to 'Edit', edit_form_path(@form), :class => "btn" %></p>   
+                </div>       
+              </div>
+            </div>      
+          </div>
+
+<%#= link_to 'Edit', edit_form_path(@form) %>
+<%#= link_to 'Back', forms_path %>
+
+
+
+
+
+ 
+    
