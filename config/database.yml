@@ -44,7 +44,18 @@ test:
   host: localhost
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter:  mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  database: us-cdbr-east-03.cleardb.com
+  username: b326cc2d0c3d09
+  password: 2d497158
+
+
+#production:
+ # adapter: sqlite3
+  #database: db/production.sqlite3
+  #pool: 5
+  #timeout: 5000
+
+
