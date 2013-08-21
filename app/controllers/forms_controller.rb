@@ -2,7 +2,7 @@ class FormsController < ApplicationController
   # GET /forms
   # GET /forms.json
   def index
-    @forms = Form.paginate(:page => params[:page], :per_page => 2).order('last_name')
+    @forms = Form.paginate(:page => params[:page], :per_page => 10).order('last_name')
 
     respond_to do |format|
       format.html # index.html.erb
