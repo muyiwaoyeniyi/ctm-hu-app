@@ -13,8 +13,8 @@ gem 'will_paginate', '~> 3.0'					#for pagination
 gem 'bootstrap-will_paginate', '0.0.6'			#for boostrap pagination style
 gem 'prawn'    									#for pdf
 gem 'awesome_nested_fields'						#for course nested fields
-gem 'bootstrap-sass'							#for bootstrap framework
 #gem "flat-ui-rails"
+gem 'bootstrap-sass', '~> 2.3.2'
 
 
 group :production do

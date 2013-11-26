@@ -9,7 +9,7 @@
 
 
                 <div class="span3">                  
-                    <%= link_to 'View All Transfer Docs', forms_path, :class => "btn btn-large" %>                 
+                    <%= link_to 'View All Transfer Docs', forms_path, :class => "btn btn-medium" %>                 
                 </div>       
                 <div class="span8">    
                   <div class="font-padding text-bold border">Course Transfer Form</div>
@@ -72,14 +72,14 @@
 
 <div class="font-padding text-bold border">
   <div class="course-header">Course Info | Original Institution</div>
-  <div>Course Info | Howard University Equivalent</div>
+  <div>Howard University Equivalent</div>
 </div>
                       <div class="items">
                           <%= f.nested_fields_for :courses do |c| %>                             
                              <%= render 'course_fields', f: c %>                              
                           <% end %>
                       </div>                        
-                          <a href="#" class="add">Add more courses</a>
+                          <a href="#" class="add font-padding">Add more courses</a>
 
                         
                     <%#<div class="total-margin">

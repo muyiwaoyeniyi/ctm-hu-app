@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require bootstrap-dropdown
 //= require jquery.nested-fields
 // require_tree .
-//= require custom
 //= require forms
-//= require bootstrap.min.js
+//= require custom
 
 
 

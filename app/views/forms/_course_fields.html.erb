@@ -9,16 +9,16 @@
 
                           	<%= f.text_field :tCourse_num, :class => "input-course-mid", :placeholder => "Course #" %>
                           	 <%= f.text_field :tCourse, :class => "input-course-large", :placeholder => "Course name" %>
-        						<%= f.text_field :tCourse_hrs, :class => "input-small", :placeholder => "Hours" %>
+        						<%= f.text_field :tCourse_hrs, :class => "input-small", :placeholder => "Hrs" %>
         		
-        					<%= f.text_field :hcourse_number, :class => "input-course-mid input-course-padding hcourse_num", :placeholder => "Course #", data: { :autocomplete_source => "/hcourses?number=" } %>
+        					<%= f.text_field :hcourse_number, :class => "input-course-mid hcourse_num", :placeholder => "Course #", data: { :autocomplete_source => "/hcourses?number=" } %>
 
 
                 <%= f.text_field :hcourse_name, :class => "input-course-large hcourse_name", :placeholder => "Course name", data: { :autocomplete_source => "/hcourses?name=" } %>
 
                      <%#= data: {autocomplete_source: Hcourse.order(:name).map(&:name)} %> <%# using client side %>
                               
-        						<%= f.text_field :hCourse_hrs, :class => "input-small", :placeholder => "Hours" %>
+        						<%= f.text_field :hCourse_hrs, :class => "input-small", :placeholder => "Hrs" %>
                 
             <a href="#" class="remove">x</a>
 

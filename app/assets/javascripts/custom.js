@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 	//this is a nasty hack. the autocomplete doesnt work on the new course form 
 	//when you click "add new courses", so I'm attaching an event on the "add 
 	//new course" link which reapplies the autocomplete widget to all course number and course
@@ -16,6 +17,8 @@ $(document).ready(function() {
 			});
         }, 2000);      
     });
+   	
+
 
     
 });

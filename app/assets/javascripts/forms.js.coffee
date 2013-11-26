@@ -12,3 +12,4 @@ jQuery ->
 		source: $('.hcourse_name').data('autocomplete-source')
 	$('.hcourse_num').autocomplete
 		source: $('.hcourse_num').data('autocomplete-source')
+

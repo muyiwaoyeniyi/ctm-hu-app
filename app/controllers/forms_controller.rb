@@ -18,13 +18,25 @@ class FormsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @form }
-      format.pdf do
-         pdf = FormPdf.new(@form)
-         send_data pdf.render, filename: "#{@form.full_name} - TF.pdf",
+
+      if params[:ms_king] == "1"
+        format.pdf do
+          pdf = FormPdf2.new(@form)
+          send_data pdf.render, filename: "#{@form.full_name} - TF.pdf",
                                 type: "application/pdf",
                                 disposition: "inline"
+        end
+      else
+        format.pdf do
+          pdf = FormPdf.new(@form)
+          send_data pdf.render, filename: "#{@form.full_name} - TF.pdf",
+                                type: "application/pdf",
+                                disposition: "inline"
+        end
       end
+      params[:ms_king] == nil
     end
+
   end
 
   # GET /forms/new

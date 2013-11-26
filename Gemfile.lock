@@ -34,7 +34,8 @@ GEM
     arel (3.0.2)
     awesome_nested_fields (0.6.4)
       rails (>= 3.0.0)
-    bootstrap-sass (2.0.4.0)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.4)
@@ -146,7 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_nested_fields
-  bootstrap-sass
+  bootstrap-sass (~> 2.3.2)
   bootstrap-will_paginate (= 0.0.6)
   coffee-rails (~> 3.2.1)
   heroku

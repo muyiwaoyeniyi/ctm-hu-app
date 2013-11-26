@@ -7,7 +7,7 @@ class Form < ActiveRecord::Base
     attr_accessible :tCourse_hrs_total, :hCourse_hrs_total, :notes
   	attr_accessible	:dept_evaluator, :dept_chair
 
-    attr_accessor :full_name
+    attr_accessor :full_name, :ms_king
 
   #Associations
   	has_many :courses, :dependent => :destroy
