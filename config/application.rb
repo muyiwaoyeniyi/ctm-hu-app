@@ -57,5 +57,9 @@ module TransferApp
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0' 
+
+    # Serving static assets and setting cache headers
+    #config.serve_static_assets = true
+    config.static_cache_control = "public, max-age=31536000"
   end
 end
