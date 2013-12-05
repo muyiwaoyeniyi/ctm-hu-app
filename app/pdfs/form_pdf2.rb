@@ -57,6 +57,8 @@ class FormPdf2 < Prawn::Document
 		text "Awarded By: #{@form.dept_chair}         		     Date: #{time.strftime("%m/%d/%y")}"
 		move_down 12
 		text "Prescribed in HU: Lawanda V. Peace, Ph.D, Assistant Dean"
+		move_down 20
+		text "Signature: _______________________________"
 	end
 
 end
